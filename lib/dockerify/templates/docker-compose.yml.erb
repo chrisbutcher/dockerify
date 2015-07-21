@@ -1,0 +1,12 @@
+web:
+  build: .
+  ports:
+    - "<%= docker_compose_port %>:<%= docker_compose_port %>"
+  env_file:
+    - .env
+  links:
+    - db
+db:
+  image: <%= docker_compose_database_image %>
+  ports:
+    - "5432"
