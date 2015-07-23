@@ -9,7 +9,8 @@ class DockerifyTest < MiniTest::Test
       "Creating Dockerfile etc in /tmp/Dockerfile",
       "Creating docker-compose.yml etc in /tmp/docker-compose.yml",
       "Creating .env etc in /tmp/.env",
-      "Creating rails-env.conf etc in /tmp/rails-env.conf"
+      "Creating rails-env.conf etc in /tmp/rails-env.conf",
+      "Creating nginx.conf etc in /tmp/nginx.conf"
     ]
 
     assert_equal expected_output, Dockerify::Runner.new.build('/tmp')

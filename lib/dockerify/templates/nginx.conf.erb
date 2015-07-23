@@ -1,0 +1,8 @@
+server {
+  listen <%= nginx_port %>;
+  server_name <%= nginx_server_name %>;
+  root <%= root_path %>;
+  passenger_enabled on;
+  passenger_user <%= nginx_passenger_user %>;
+  passenger_ruby /usr/bin/ruby<%= nginx_ruby_version %>;
+}

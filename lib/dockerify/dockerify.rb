@@ -30,6 +30,16 @@ module Dockerify
       {
         filename: 'rails-env.conf',
         default_args: {}
+      },
+      {
+        filename: 'nginx.conf',
+        default_args: {
+          nginx_port: '80',
+          nginx_server_name: 'myapp.com',
+          root_path: '/home/app/webapp/public',
+          nginx_passenger_user: 'app',
+          nginx_ruby_version: '2.2'
+        }
       }
     ].freeze
 
