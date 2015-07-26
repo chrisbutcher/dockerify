@@ -1,0 +1,29 @@
+namespace :dockerify do
+  desc "Start the Docker containers."
+  task :up do
+    on roles(:all) do
+      execute "cd #{release_path} && #{fetch(:dc_bin) || "docker-compose"} -p #{fetch(:application)} up -d"
+    end
+  end
+
+  desc "Build the Docker container."
+  task :build do
+    on roles(:all) do
+      execute "cd #{release_path} && #{fetch(:dc_bin) || "docker-compose"} -p #{fetch(:application)} build"
+    end
+  end
+
+  desc "Migrate the database (optional)"
+  task :migrate do
+    on roles(:all) do
+      execute "cd #{release_path} && #{fetch(:dc_bin) || "docker-compose"} -p #{fetch(:application)} run web bundle exec rake db:migrate"
+    end
+  end
+
+  desc "Kill the Docker containers."
+  task :kill do
+    on roles(:all) do
+      execute "cd #{release_path} && #{fetch(:dc_bin) || "docker-compose"} -p #{fetch(:application)} kill"
+    end
+  end
+end

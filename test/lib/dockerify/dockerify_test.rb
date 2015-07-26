@@ -10,6 +10,7 @@ class DockerifyTest < MiniTest::Test
       "Creating docker-compose.yml etc in /tmp/docker-compose.yml",
       "Creating .env etc in /tmp/.env",
       "Creating rails-env.conf etc in /tmp/rails-env.conf",
+      "Creating capistrano-dockerify.rake etc in /tmp/capistrano-dockerify.rake",
       "Creating nginx.conf etc in /tmp/nginx.conf"
     ]
 

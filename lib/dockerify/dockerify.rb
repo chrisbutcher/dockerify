@@ -32,6 +32,10 @@ module Dockerify
         default_args: {}
       },
       {
+        filename: 'capistrano-dockerify.rake',
+        default_args: {}
+      },
+      {
         filename: 'nginx.conf',
         default_args: {
           nginx_port: '80',
